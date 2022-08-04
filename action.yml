@@ -1,0 +1,9 @@
+name: Heaviest Objects in the Universe
+description: 'Measure the size of a module and all its dependencies'
+inputs:
+  github-token:
+    description: "Github token secret"
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

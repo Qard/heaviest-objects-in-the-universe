@@ -1,0 +1,15 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: task
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
