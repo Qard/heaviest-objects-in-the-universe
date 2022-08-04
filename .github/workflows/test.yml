@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - id: task
+      - uses: actions/setup-node@v2
+      - run: npm install
+      - name: Compute module size tree and report
         uses: ./
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          with-dev-dependencies: true
