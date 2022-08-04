@@ -10646,7 +10646,7 @@ const { getInput, setFailed, info, warning } = __nccwpck_require__(2186)
 const { inspect } = __nccwpck_require__(3837)
 
 const {
-  moduleTreeSize,
+  moduleSizeTree,
   toMarkdown
 }= __nccwpck_require__(4351)
 
@@ -10689,7 +10689,7 @@ async function createOrUpdateIssueComment (message) {
 
 async function main () {
   const withDev = getInput('with-dev-dependencies')
-  const data = await moduleTreeSize('./', { withDev })
+  const data = await moduleSizeTree('./', { withDev })
   console.log(inspect(data, false, 100, true))
   await createOrUpdateIssueComment(toMarkdown(data))
 }

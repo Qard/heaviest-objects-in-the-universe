@@ -11,9 +11,9 @@ npm install heaviest-objects-in-the-universe
 ```
 
 ```js
-const getSizeTree = require('heaviest-objects-in-the-universe')
+const { moduleSizeTree } = require('heaviest-objects-in-the-universe')
 
-const tree = await getSizeTree('./', {
+const tree = await moduleSizeTree('./', {
   // Include devDependencies of root module
   // Default: false
   withDev: true,
@@ -26,7 +26,7 @@ const tree = await getSizeTree('./', {
 })
 ```
 
-For a reference describing the tree structure, see the [TypeScript types](./index.d.ts).
+For a reference describing the tree structure, see the [TypeScript types][].
 
 ## CLI Tool
 
@@ -43,3 +43,5 @@ with:
   # Required to provide issue comments
   github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+[TypeScript types]: https://github.com/Qard/heaviest-objects-in-the-universe/blob/main/index.d.ts

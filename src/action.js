@@ -3,7 +3,7 @@ const { getInput, setFailed, info, warning } = require('@actions/core')
 const { inspect } = require('util')
 
 const {
-  moduleTreeSize,
+  moduleSizeTree,
   toMarkdown
 }= require('./')
 
@@ -46,7 +46,7 @@ async function createOrUpdateIssueComment (message) {
 
 async function main () {
   const withDev = getInput('with-dev-dependencies')
-  const data = await moduleTreeSize('./', { withDev })
+  const data = await moduleSizeTree('./', { withDev })
   console.log(inspect(data, false, 100, true))
   await createOrUpdateIssueComment(toMarkdown(data))
 }

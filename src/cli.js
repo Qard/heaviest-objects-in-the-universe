@@ -4,7 +4,7 @@ const marked = require('marked')
 const TerminalRenderer = require('marked-terminal')
 
 const {
-  moduleTreeSize,
+  moduleSizeTree,
   toMarkdown
 }= require('./index')
 
@@ -14,7 +14,7 @@ marked.setOptions({
   renderer: new TerminalRenderer()
 })
 
-moduleTreeSize(path)
+moduleSizeTree(path)
   .then(toMarkdown)
   .then(marked)
   .then(console.log)
