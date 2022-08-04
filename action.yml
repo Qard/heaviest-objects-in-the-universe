@@ -1,5 +1,8 @@
 name: Heaviest Objects in the Universe
 description: 'Measure the size of a module and all its dependencies'
+branding:
+  icon: bar-chart-2
+  color: gray-dark
 inputs:
   github-token:
     description: Github token secret
