@@ -9,8 +9,7 @@ Self size: <%= filesize(totalFileSize) %>
 Deduped: <%= filesize(totalDedupedSize) %>
 No deduping: <%= filesize(totalSize) %>
 
-# Dependency sizes
-
+<details><summary>Dependency sizes</summary>
 | name | version | self size | total size |
 |------|---------|-----------|------------|
 <%
@@ -21,6 +20,8 @@ const sorted = dependencySizes.sort((a, b) => {
 for (const dep of sorted) {
   %>| <%= dep.name %> | <%= dep.version %> | <%= filesize(dep.totalFileSize) %> | <%= filesize(dep.totalDedupedSize) %> |
 <% } %>
+
+</details>
 
 `, {
   filename: 'template.ejs'
