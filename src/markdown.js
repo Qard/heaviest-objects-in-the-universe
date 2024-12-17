@@ -10,6 +10,7 @@ Deduped: <%= filesize(totalDedupedSize) %>
 No deduping: <%= filesize(totalSize) %>
 
 <details><summary>Dependency sizes</summary>
+
 | name | version | self size | total size |
 |------|---------|-----------|------------|
 <%
